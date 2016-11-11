@@ -71,6 +71,9 @@ void loop() {
     Y_val = map(Y_val, Y_base, 1023, 0, 255);
   };
   
+  // print to serial
+  Serial.print("UP = "),Serial.print(digitalRead(up_button)),Serial.print("\t");
+  
   root["X"] = X_val;
   root["Y"] = Y_val;
   root["UP"] = abs(digitalRead(up_button) - 1);
@@ -85,7 +88,7 @@ void loop() {
   // This prints json format data
 
   Serial.println();
-  delay(100);
+  //delay(100);
   
   
   
